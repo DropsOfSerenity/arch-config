@@ -172,10 +172,13 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 let g:ctrlp_max_depth = 40
 
 " C / C++
-map <Leader>g :make && make run
+map <Leader>g :make && make run<CR>
 autocmd FileType c,cpp :set cindent
 autocmd FileType c,cpp :setf c
 autocmd FileType c,cpp :set expandtab
+
+" don't indent namespaces in C++
+set cino=:0,N-s,g0
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " auto insert header guards to .h files
